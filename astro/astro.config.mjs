@@ -3,8 +3,11 @@ import react from '@astrojs/react';
 import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 
+import cloudflare from "@astrojs/cloudflare";
+
 export default defineConfig({
   site: 'https://vision2co.de',
+
   integrations: [
     react(),
     tailwind({ applyBaseStyles: false }),
@@ -20,10 +23,14 @@ export default defineConfig({
         !page.includes('/cancellation'),
     }),
   ],
-  output: 'static',
+
+  output: "hybrid",
+
   i18n: {
     defaultLocale: 'de',
     locales: ['de', 'en'],
     routing: { prefixDefaultLocale: false },
   },
+
+  adapter: cloudflare()
 });
