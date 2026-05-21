@@ -1,0 +1,36 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Screenshots (local dev artifacts)
+*.png
+*.jpg
+!astro/public/**
+!astro/src/**
+
+# app/ (deleted, legacy prototype)
+app/
+
+# Astro
+astro/node_modules/
+astro/dist/
+astro/.astro/
+astro/.env
+astro/.env.*
+
+# Backend
+backend/vendor/
+backend/node_modules/
+backend/.env
+backend/storage/logs/*.log
+backend/storage/framework/cache/
+backend/storage/framework/sessions/
+backend/storage/framework/views/
+backend/bootstrap/cache/
+backend/database/database.sqlite
+
+# Misc
+*.lock
+!package-lock.json
+!astro/package-lock.json
+!backend/composer.lock

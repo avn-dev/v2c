@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "read -r json; fp=$(echo \"$json\" | jq -r '.tool_input.file_path // empty'); echo \"$fp\" | grep -q '\\.php$' && cd /Users/avn/Downloads/vision2code_mobile_hero_scroll_cards/backend && ./vendor/bin/pint \"$fp\" 2>/dev/null || true",
+            "statusMessage": "Running Laravel Pint..."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteNav from '../../components/SiteNav';
+import ImpressumPage from '../../sections/ImpressumPage';
+import SiteFooter from '../../sections/SiteFooter.astro';
+import { getT } from '../../i18n/translations';
+
+const lang = 'en';
+const tr = getT(lang);
+const altLegalHref = '/agb';
+---
+
+<BaseLayout
+  lang={lang}
+  title="Terms & Conditions · vision2code"
+  description="Terms and conditions of vision2code."
+  canonicalPath="/terms"
+  altPath="/agb"
+  isLegal={true}
+>
+  <SiteNav lang={lang} isLegal={true} altLegalHref={altLegalHref} selfPath="/en/terms" client:load />
+  <ImpressumPage section="agb" lang={lang} />
+  <SiteFooter tr={tr} lang={lang} isLegal={true} altLegalHref={altLegalHref} />
+</BaseLayout>

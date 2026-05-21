@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteNav from '../components/SiteNav';
+import HeroSlideshow from '../sections/HeroSlideshow';
+import ServicesSection from '../sections/ServicesSection.astro';
+import ProcessSection from '../sections/ProcessSection.astro';
+import AboutSection from '../sections/AboutSection.astro';
+import CasesSection from '../sections/CasesSection.astro';
+import ContactSection from '../sections/ContactSection';
+import SiteFooter from '../sections/SiteFooter.astro';
+import { getT } from '../i18n/translations';
+
+const lang = 'de';
+const tr = getT(lang);
+---
+
+<BaseLayout
+  lang={lang}
+  title="vision2code | Webapps, KI & Automatisierung"
+  description="Ich entwickle Webapps, APIs, KI-Integrationen und Automatisierungen. Vom Konzept bis zum laufenden Server, remote und weltweit."
+  canonicalPath="/"
+>
+  <SiteNav lang={lang} client:load />
+  <main>
+    <HeroSlideshow lang={lang} client:load />
+    <ServicesSection tr={tr} />
+    <ProcessSection  tr={tr} />
+    <AboutSection    tr={tr} />
+    {/* <CasesSection tr={tr} /> */}
+    <ContactSection  lang={lang} client:idle />
+  </main>
+  <SiteFooter tr={tr} lang={lang} />
+</BaseLayout>

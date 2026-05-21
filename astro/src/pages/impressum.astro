@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteNav from '../components/SiteNav';
+import ImpressumPage from '../sections/ImpressumPage';
+import SiteFooter from '../sections/SiteFooter.astro';
+import { getT } from '../i18n/translations';
+
+const lang = 'de';
+const tr = getT(lang);
+const altLegalHref = '/en/imprint';
+---
+
+<BaseLayout
+  lang={lang}
+  title="Impressum · vision2code"
+  description="Impressum, Datenschutzerklärung, AGB und Widerrufsrecht von vision2code."
+  canonicalPath="/impressum"
+  altPath="/imprint"
+  isLegal={true}
+>
+  <SiteNav lang={lang} isLegal={true} altLegalHref={altLegalHref} selfPath="/impressum" client:load />
+  <ImpressumPage section="impressum" lang={lang} />
+  <SiteFooter tr={tr} lang={lang} isLegal={true} altLegalHref={altLegalHref} />
+</BaseLayout>

@@ -1,0 +1,103 @@
+# vision2code - Full Site Content
+
+> Freelance software developer. Webapps, APIs, AI integrations, automation. Remote, worldwide.
+
+---
+
+## Hero
+
+**VISION -> CODE.**
+I build web applications that don't feel like software - they feel like good tools. Clean code, clear UX, honest consulting.
+
+**PROCESSES WITHOUT PAPER.**
+Manual spreadsheets, double entries, Excel ping-pong. I build the connections that finally automate your office.
+
+**AI THAT WORKS.**
+No demos, no hype. I integrate LLMs, RAG pipelines and vision models where they actually save you time.
+
+---
+
+## Services
+
+vision2code is deliberately generalist. The whole product is built end-to-end - from concept to running server. No ping-pong between agencies, no "that's not our department."
+
+**Web Applications**
+Dashboards, internal tools, platforms. Software your team actually enjoys using - and that's still maintainable two years from now.
+
+**Websites**
+Marketing sites, landing pages, portfolios. Fast, clean, search-engine friendly. CMS integration if you want to manage content yourself.
+
+**API & Integration**
+Making systems talk to each other. CRM <-> accounting, shop <-> ERP, calendar <-> telephony. Data flows instead of data standstill.
+
+**AI Solutions**
+LLMs, RAG pipelines, vision models. Concretely integrated into your workflow - not as a demo, but as a feature.
+
+**Automation**
+From "someone does it manually" to "the system handles it". Scrapers, cronjobs, n8n flows, scripts. All documented.
+
+**Consulting & Maintenance**
+Code review, architecture audits, bug triage, technical roadmaps. Sparring partner for technical decisions.
+
+---
+
+## Process
+
+**Step 1 - Listen**
+Initial call, free, no sales pitch. The problem is understood first, then solutions are proposed.
+
+**Step 2 - Design**
+User flows, wireframes, technical architecture, stack choice. Fixed price or transparent hourly budget.
+
+**Step 3 - Build**
+Weekly demos instead of months-long black box. Progress visible in real time, course-corrections early.
+
+**Step 4 - Handover**
+Clean documentation, deployment, training. Optional ongoing maintenance. Complete code export - client owns everything.
+
+---
+
+## Case Studies
+
+**AI / Healthcare - Radiology reporting assistant (Hamburg)**
+RAG system based on medical history, previous findings and image descriptions. Suggestions finalized by the doctor - AI accelerates, doesn't replace.
+Result: -62% reporting time per patient.
+
+**Automation / SME - Invoice routing (Cologne wholesale distributor)**
+Incoming invoices from email, OCR, rule-based cost-center assignment, direct DATEV integration. One click to approve instead of three accountants in a loop.
+Result: 14 hours per week saved, permanently.
+
+**Webapp / SaaS - Booking dashboard for coaching network**
+From Figma to production webapp in 11 weeks. Stripe subscriptions, calendar sync, in-app messaging. Team now runs the system independently.
+Result: 0 -> 1,200 active coaches in 6 months.
+
+---
+
+## About
+
+vision2code is one person: a developer for webapps, APIs, AI integrations and automation. Clients hire the developer directly and get the developer. No middleman, no team you never meet.
+
+Enough projects have been seen to know where most problems start: not in the code, but before it. Unclear requirements, wrong stack choices, features nobody needs. Time is invested in understanding the problem before building starts.
+
+Clients get someone who thinks along - not just executes.
+
+---
+
+## Contact
+
+Email: hallo@vision2co.de
+Response time: within 24 hours
+Location: Remote, working worldwide
+Availability: 2 project slots from July 2026
+
+Services offered: Webapp / internal software, Website / landing page, API & integration, AI integration, Automation, Consulting / code audit.
+
+---
+
+## Site URLs
+
+- https://vision2co.de/ (German)
+- https://vision2co.de/en/ (English)
+- https://vision2co.de/sitemap-index.xml
+- https://vision2co.de/llms.txt
+- https://vision2co.de/llms-full.txt

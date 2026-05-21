@@ -1,0 +1,30 @@
+# vision2code
+
+> Freelance software developer building webapps, APIs, AI integrations and automation - remote, worldwide. One person, full stack, full responsibility.
+
+## Services
+
+- [Web Applications](https://vision2co.de/#services) - Dashboards, internal tools, platforms. Maintainable, clean code, clear UX.
+- [Websites](https://vision2co.de/#services) - Marketing sites, landing pages, portfolios. Fast, SEO-friendly, optional CMS.
+- [API & Integration](https://vision2co.de/#services) - Connecting CRM <-> accounting, shop <-> ERP, calendar <-> telephony.
+- [AI Solutions](https://vision2co.de/#services) - LLMs, RAG pipelines, vision models integrated into real workflows.
+- [Automation](https://vision2co.de/#services) - n8n flows, scrapers, cronjobs, scripts. All documented.
+- [Consulting & Maintenance](https://vision2co.de/#services) - Code review, architecture audits, bug triage, technical roadmaps.
+
+## Case Studies
+
+- Radiology reporting assistant (Hamburg) - RAG system on medical history + image descriptions. -62% reporting time per patient.
+- Invoice routing for wholesale distributor (Cologne) - OCR + rule-based DATEV integration. 14 h/week saved permanently.
+- Booking dashboard for coaching network - Figma to production in 11 weeks. Stripe, calendar sync, in-app messaging. 0 -> 1,200 active coaches in 6 months.
+
+## About
+
+vision2code is a solo freelance practice. Clients hire the developer directly - no middleman, no handoffs. Approach: understand the problem thoroughly before writing a line of code. Fixed-price or transparent hourly budget.
+
+Contact: hallo@vision2co.de | Response within 24 h.
+Location: Remote, worldwide.
+
+## Pages
+
+- [Homepage (DE)](https://vision2co.de/)
+- [Homepage (EN)](https://vision2co.de/en/)

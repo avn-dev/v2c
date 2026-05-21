@@ -1,0 +1,21 @@
+---
+import type { Translations } from '../i18n/translations';
+
+interface Props { tr: Translations }
+const { tr } = Astro.props;
+---
+
+<section id="ueber" style="background: var(--paper); padding-bottom: clamp(80px,12vh,160px)">
+  <div style="max-width: 1080px; margin: 0 auto; padding: clamp(72px,10vh,140px) var(--shell-pad) 48px">
+    <div class="eyebrow">{tr.about_eyebrow}</div>
+    <h2 style="margin: 16px 0 0; font-size: clamp(40px,5vw,76px); font-weight: 600; letter-spacing: -0.03em; line-height: 0.96; max-width: 800px">
+      {tr.about_headline}
+    </h2>
+  </div>
+
+  <div style="max-width: 1080px; margin: 0 auto; padding: 0 var(--shell-pad); font-size: 17px; line-height: 1.65; color: var(--ink-2); display: flex; flex-direction: column; gap: 18px">
+    <p style="margin: 0">{tr.about_p1}</p>
+    <p style="margin: 0">{tr.about_p2}</p>
+    <p style="margin: 0">{tr.about_p3}</p>
+  </div>
+</section>

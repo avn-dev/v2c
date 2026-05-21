@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+Disallow: /impressum
+Disallow: /datenschutz
+Disallow: /agb
+Disallow: /widerruf
+Disallow: /en/imprint
+Disallow: /en/privacy-policy
+Disallow: /en/terms
+Disallow: /en/cancellation
+
+Sitemap: https://vision2co.de/sitemap-index.xml
+
+# LLM-friendly content
+# https://vision2co.de/llms.txt
+# https://vision2co.de/llms-full.txt

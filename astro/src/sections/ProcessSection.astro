@@ -1,0 +1,35 @@
+---
+import type { Translations } from '../i18n/translations';
+
+interface Props { tr: Translations }
+const { tr } = Astro.props;
+
+const steps = [
+  { n: '01', t: tr.proc_listen,   b: tr.proc_listen_desc,   d: '30–60 min' },
+  { n: '02', t: tr.proc_conceive, b: tr.proc_conceive_desc, d: '1–2 Wochen' },
+  { n: '03', t: tr.proc_build,    b: tr.proc_build_desc,    d: '4–12 Wochen' },
+  { n: '04', t: tr.proc_handover, b: tr.proc_handover_desc, d: '1 Woche + ∞' },
+];
+---
+
+<section id="prozess" style="background: var(--night); color: #fff; padding-bottom: clamp(80px,12vh,160px)">
+  <div style="max-width: 1080px; margin: 0 auto; padding: clamp(72px,10vh,140px) var(--shell-pad) 48px">
+    <div class="eyebrow" style="color: rgba(255,255,255,0.55)">{tr.proc_title}</div>
+    <h2 style="margin: 16px 0 0; font-size: clamp(40px,5.5vw,88px); font-weight: 600; letter-spacing: -0.03em; line-height: 0.96; color: #fff; text-wrap: balance">
+      {tr.proc_headline}
+    </h2>
+  </div>
+
+  <div class="process-grid" style="max-width: 1280px; margin: 0 auto; padding: 0 var(--shell-pad); display: grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); border-top: 1px solid rgba(255,255,255,0.10)">
+    {steps.map((s, i) => (
+      <div style={`padding: 40px 28px 48px; border-right: ${i < steps.length - 1 ? '1px solid rgba(255,255,255,0.10)' : 'none'}; display: flex; flex-direction: column`}>
+        <div style="display: flex; justify-content: space-between; align-items: flex-start">
+          <span style="font-family: var(--font-mono); font-size: 12px; color: rgba(255,255,255,0.5)">{s.n}</span>
+          <span style="font-family: var(--font-mono); font-size: 11px; color: rgba(255,255,255,0.5); letter-spacing: 0.04em; text-transform: uppercase">{s.d}</span>
+        </div>
+        <h3 style="margin: 36px 0 14px; font-size: 32px; font-weight: 600; letter-spacing: -0.02em">{s.t}</h3>
+        <p style="margin: 0; color: rgba(255,255,255,0.72); font-size: 15px; line-height: 1.55">{s.b}</p>
+      </div>
+    ))}
+  </div>
+</section>

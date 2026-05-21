@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteNav from '../components/SiteNav';
+import ImpressumPage from '../sections/ImpressumPage';
+import SiteFooter from '../sections/SiteFooter.astro';
+import { getT } from '../i18n/translations';
+
+const lang = 'de';
+const tr = getT(lang);
+const altLegalHref = '/en/privacy-policy';
+---
+
+<BaseLayout
+  lang={lang}
+  title="Datenschutzerklärung · vision2code"
+  description="Datenschutzerklärung von vision2code gemäß DSGVO."
+  canonicalPath="/datenschutz"
+  altPath="/privacy-policy"
+  isLegal={true}
+>
+  <SiteNav lang={lang} isLegal={true} altLegalHref={altLegalHref} selfPath="/datenschutz" client:load />
+  <ImpressumPage section="datenschutz" lang={lang} />
+  <SiteFooter tr={tr} lang={lang} isLegal={true} altLegalHref={altLegalHref} />
+</BaseLayout>

@@ -1,0 +1,80 @@
+---
+interface Props {
+  lang: 'de' | 'en';
+  title: string;
+  description: string;
+  canonicalPath: string;
+  altPath?: string; // alternate-language path when it differs from canonicalPath
+  isLegal?: boolean;
+}
+
+const { lang, title, description, canonicalPath, altPath, isLegal = false } = Astro.props;
+
+const baseUrl    = 'https://vision2co.de';
+const _altPath   = altPath ?? canonicalPath;
+const altHref    = lang === 'de' ? `${baseUrl}/en${_altPath}` : `${baseUrl}${_altPath}`;
+const selfHref   = lang === 'de' ? `${baseUrl}${canonicalPath || '/'}` : `${baseUrl}/en${canonicalPath || '/'}`;
+const xDefault   = lang === 'de' ? selfHref : `${baseUrl}${_altPath || '/'}`;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'vision2code',
+  url: baseUrl,
+  email: 'hallo@vision2co.de',
+  description: 'Softwareentwicklung: Webapps, APIs, KI-Integrationen und Automatisierung.',
+  sameAs: ['https://www.instagram.com/vision2co.de'],
+  areaServed: 'DE',
+  serviceType: ['Web Development', 'API Integration', 'AI Integration', 'Automation'],
+};
+---
+
+<!doctype html>
+<html lang={lang} dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate icon" href="/favicon.ico" />
+    <meta name="theme-color" content="#0a0a0a" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="vision2code" />
+    <meta name="robots" content={isLegal ? 'noindex, nofollow, noarchive, nosnippet' : 'index, follow'} />
+
+    <!-- Canonical + hreflang -->
+    <link rel="canonical" href={selfHref} />
+    <link rel="alternate" hreflang={lang === 'de' ? 'en' : 'de'} href={altHref} />
+    <link rel="alternate" hreflang={lang}  href={selfHref} />
+    <link rel="alternate" hreflang="x-default" href={xDefault} />
+
+    <!-- Open Graph -->
+    <meta property="og:type"        content="website" />
+    <meta property="og:url"         content={selfHref} />
+    <meta property="og:title"       content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:locale"      content={lang === 'de' ? 'de_DE' : 'en_US'} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card"        content="summary_large_image" />
+    <meta name="twitter:title"       content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <!-- JSON-LD -->
+    {!isLegal && (
+      <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    )}
+
+    <!-- Fonts + global CSS -->
+    <link rel="preload" href="/fonts/Fellix-Regular.otf"  as="font" type="font/otf" crossorigin />
+    <link rel="preload" href="/fonts/Fellix-SemiBold.otf" as="font" type="font/otf" crossorigin />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  @import '../styles/global.css';
+</style>

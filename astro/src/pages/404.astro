@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteNav from '../components/SiteNav';
+import SiteFooter from '../sections/SiteFooter.astro';
+import { getT } from '../i18n/translations';
+
+const lang = 'de';
+const tr = getT(lang);
+---
+
+<BaseLayout
+  lang={lang}
+  title="404 · Seite nicht gefunden · vision2code"
+  description="Diese Seite existiert nicht."
+  canonicalPath="/404"
+  isLegal={false}
+>
+  <SiteNav lang={lang} client:load />
+
+  <main style="
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 var(--shell-pad);
+    font-family: var(--font-fellix);
+    background: var(--paper);
+  ">
+    <p style="
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: var(--mute);
+      margin: 0 0 24px;
+      text-transform: uppercase;
+    ">404</p>
+
+    <h1 style="
+      margin: 0 0 20px;
+      font-size: clamp(56px, 10vw, 120px);
+      font-weight: 600;
+      letter-spacing: -0.04em;
+      line-height: 0.92;
+      color: var(--ink);
+    ">Seite nicht<br />gefunden.</h1>
+
+    <p style="
+      margin: 0 0 48px;
+      font-size: 18px;
+      color: var(--mute);
+      max-width: 420px;
+      line-height: 1.55;
+    ">Diese URL existiert nicht. Zurück zur Startseite oder direkt Kontakt aufnehmen.</p>
+
+    <div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
+      <a href="/" style="
+        display: inline-flex; align-items: center; gap: 8px;
+        background: var(--ink); color: #fff;
+        padding: 14px 28px; border-radius: 999px;
+        font-size: 15px; font-weight: 500;
+        text-decoration: none;
+      ">Zur Startseite</a>
+
+      <a href="mailto:hallo@vision2co.de" style="
+        display: inline-flex; align-items: center; gap: 8px;
+        background: transparent; color: var(--ink);
+        padding: 14px 28px; border-radius: 999px;
+        font-size: 15px; font-weight: 500;
+        text-decoration: none;
+        border: 1.5px solid var(--hairline);
+      ">hallo@vision2co.de</a>
+    </div>
+  </main>
+
+  <SiteFooter tr={tr} lang={lang} />
+</BaseLayout>

@@ -1,0 +1,126 @@
+openapi: 3.1.0
+info:
+  title: vision2code API
+  version: 1.0.0
+  description: |
+    RESTful JSON API for the vision2code platform.
+    All endpoints are versioned under /api/v1/ (future) or /api/ (current).
+  contact:
+    email: caliskan.v@icloud.com
+
+servers:
+  - url: http://localhost:8000
+    description: Local development
+
+paths:
+  /api/contact:
+    post:
+      summary: Submit a contact / lead inquiry
+      description: |
+        Creates a new lead record and queues a contact notification email.
+        Rate-limited to 5 requests per minute per IP.
+      operationId: contact.store
+      tags:
+        - Contact
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ContactRequest'
+            example:
+              name: Max Mustermann
+              email: max@example.de
+              service_type: webapp
+              message: Ich interessiere mich für eine Demo des O2 Shop Assistenten.
+              lang: de
+      responses:
+        '201':
+          description: Inquiry received and queued for processing
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: ok
+        '422':
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationError'
+        '429':
+          description: Too many requests (rate limit exceeded — 5/min per IP)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+components:
+  schemas:
+    ContactRequest:
+      type: object
+      required:
+        - name
+        - email
+        - message
+      properties:
+        name:
+          type: string
+          maxLength: 255
+          example: Max Mustermann
+        email:
+          type: string
+          format: email
+          maxLength: 255
+          example: max@example.de
+        service_type:
+          type: string
+          nullable: true
+          enum:
+            - webapp
+            - website
+            - api
+            - ai
+            - automation
+            - audit
+            - other
+          example: webapp
+        message:
+          type: string
+          minLength: 10
+          maxLength: 5000
+          example: Ich interessiere mich für eine Demo.
+        lang:
+          type: string
+          nullable: true
+          enum:
+            - de
+            - en
+          default: de
+          example: de
+
+    ValidationError:
+      type: object
+      properties:
+        message:
+          type: string
+          example: The name field is required.
+        errors:
+          type: object
+          additionalProperties:
+            type: array
+            items:
+              type: string
+          example:
+            email:
+              - The email field must be a valid email address.
+
+    ErrorResponse:
+      type: object
+      properties:
+        message:
+          type: string
+          example: Too Many Attempts.

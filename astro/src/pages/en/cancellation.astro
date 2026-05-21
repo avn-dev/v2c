@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteNav from '../../components/SiteNav';
+import ImpressumPage from '../../sections/ImpressumPage';
+import SiteFooter from '../../sections/SiteFooter.astro';
+import { getT } from '../../i18n/translations';
+
+const lang = 'en';
+const tr = getT(lang);
+const altLegalHref = '/widerruf';
+---
+
+<BaseLayout
+  lang={lang}
+  title="Cancellation Policy · vision2code"
+  description="Cancellation policy of vision2code."
+  canonicalPath="/cancellation"
+  altPath="/widerruf"
+  isLegal={true}
+>
+  <SiteNav lang={lang} isLegal={true} altLegalHref={altLegalHref} selfPath="/en/cancellation" client:load />
+  <ImpressumPage section="widerruf" lang={lang} />
+  <SiteFooter tr={tr} lang={lang} isLegal={true} altLegalHref={altLegalHref} />
+</BaseLayout>

@@ -1,0 +1,81 @@
+---
+import type { Translations } from '../i18n/translations';
+
+interface Props { tr: Translations }
+const { tr } = Astro.props;
+
+const SWATCHES = [
+  'linear-gradient(135deg, #1d3a3a, #0d2024)',
+  'linear-gradient(135deg, #3a2d1b, #1a130a)',
+  'linear-gradient(135deg, #1b2640, #0c1224)',
+];
+
+const IMAGES = [
+  '/images/case-healthcare.jpg',
+  '/images/case-automation.jpg',
+  '/images/case-saas.jpg',
+];
+
+const cases = [
+  {
+    tag:         tr.case_healthcare_tag,
+    title:       tr.case_healthcare_title,
+    metric:      tr.case_healthcare_metric,
+    metricLabel: tr.case_healthcare_metricLabel,
+    body:        tr.case_healthcare_body,
+  },
+  {
+    tag:         tr.case_auto_tag,
+    title:       tr.case_auto_title,
+    metric:      tr.case_auto_metric,
+    metricLabel: tr.case_auto_metricLabel,
+    body:        tr.case_auto_body,
+  },
+  {
+    tag:         tr.case_saas_tag,
+    title:       tr.case_saas_title,
+    metric:      tr.case_saas_metric,
+    metricLabel: tr.case_saas_metricLabel,
+    body:        tr.case_saas_body,
+  },
+];
+---
+
+<section style="background: var(--paper); padding-bottom: clamp(80px,12vh,160px)">
+  <div id="cases" style="max-width: 1080px; margin: 0 auto; padding: clamp(72px,10vh,140px) var(--shell-pad) 48px">
+    <div class="eyebrow">{tr.cases_title}</div>
+    <h2 style="margin: 16px 0 0; font-size: clamp(40px,5vw,76px); font-weight: 600; letter-spacing: -0.03em; line-height: 0.96; text-wrap: balance">
+      {tr.cases_headline}
+    </h2>
+  </div>
+
+  <div style="max-width: 1280px; margin: 0 auto; padding: 0 var(--shell-pad); display: flex; flex-direction: column; gap: 20px">
+    {cases.map((c, i) => (
+      <article class="lift grid-cases" style={`background: #fff; border: 1px solid var(--hairline); border-radius: 28px; overflow: hidden; display: grid; grid-template-columns: minmax(280px,380px) 1fr; min-height: 280px`}>
+        <div style={`background: ${SWATCHES[i]}; position: relative; display: flex; flex-direction: column; justify-content: space-between; padding: 32px; color: #fff; overflow: hidden`}>
+          <img src={IMAGES[i]} alt={c.title} style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.45; mix-blend-mode: luminosity" />
+          <div style="position: relative; z-index: 1">
+            <div class="eyebrow" style="color: rgba(255,255,255,0.7)">{c.tag}</div>
+          </div>
+          <div style="position: relative; z-index: 1">
+            <div style="font-size: clamp(40px,4vw,60px); font-weight: 600; letter-spacing: -0.03em; line-height: 1">{c.metric}</div>
+            <div style="margin-top: 8px; color: rgba(255,255,255,0.75); font-size: 13px">{c.metricLabel}</div>
+          </div>
+        </div>
+
+        <div style="padding: 32px 36px; display: flex; flex-direction: column; justify-content: space-between">
+          <div>
+            <div style="font-family: var(--font-mono); font-size: 11px; color: var(--mute); letter-spacing: 0.05em">
+              CASE {String(i + 1).padStart(2, '0')}
+            </div>
+            <h3 style="margin: 14px 0 16px; font-size: clamp(22px,2vw,30px); font-weight: 600; letter-spacing: -0.015em; line-height: 1.15">{c.title}</h3>
+            <p style="margin: 0; color: var(--ink-2); font-size: 15px; line-height: 1.55; max-width: 600px">{c.body}</p>
+          </div>
+          <a href="#" class="u-link" style="margin-top: 28px; font-size: 14px; font-weight: 500; color: var(--ink)">
+            {tr.case_read} →
+          </a>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>

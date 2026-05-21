@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteNav from '../components/SiteNav';
+import ImpressumPage from '../sections/ImpressumPage';
+import SiteFooter from '../sections/SiteFooter.astro';
+import { getT } from '../i18n/translations';
+
+const lang = 'de';
+const tr = getT(lang);
+const altLegalHref = '/en/cancellation';
+---
+
+<BaseLayout
+  lang={lang}
+  title="Widerrufsrecht · vision2code"
+  description="Widerrufsrecht und Widerrufsbelehrung von vision2code."
+  canonicalPath="/widerruf"
+  altPath="/cancellation"
+  isLegal={true}
+>
+  <SiteNav lang={lang} isLegal={true} altLegalHref={altLegalHref} selfPath="/widerruf" client:load />
+  <ImpressumPage section="widerruf" lang={lang} />
+  <SiteFooter tr={tr} lang={lang} isLegal={true} altLegalHref={altLegalHref} />
+</BaseLayout>
