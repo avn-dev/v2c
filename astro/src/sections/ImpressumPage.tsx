@@ -58,9 +58,7 @@ function ImpressumContent() {
       </LegalSection>
       <LegalSection title="Streitschlichtung">
         <p style={{ margin: 0 }}>
-          Die EU-Kommission stellt eine Plattform zur Online-Streitbeilegung bereit:{' '}
-          <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>ec.europa.eu/consumers/odr</a>.
-          {' '}Zur Teilnahme an einem Streitbeilegungsverfahren sind wir nicht verpflichtet und nicht bereit.
+          Zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle sind wir nicht verpflichtet und nicht bereit. Die frühere EU-Plattform zur Online-Streitbeilegung (OS-Plattform) wurde zum 20. Juli 2025 eingestellt; ein Link darauf ist daher nicht mehr erforderlich.
         </p>
       </LegalSection>
     </>
@@ -83,9 +81,7 @@ function ImprintContent() {
       </LegalSection>
       <LegalSection title="Dispute resolution">
         <p style={{ margin: 0 }}>
-          The EU Commission provides a platform for online dispute resolution:{' '}
-          <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>ec.europa.eu/consumers/odr</a>.
-          {' '}We are neither obligated nor willing to participate in dispute resolution proceedings.
+          We are neither obligated nor willing to participate in dispute resolution proceedings before a consumer arbitration board. The former EU Online Dispute Resolution platform was discontinued on 20 July 2025; a link to it is therefore no longer required.
         </p>
       </LegalSection>
     </>
