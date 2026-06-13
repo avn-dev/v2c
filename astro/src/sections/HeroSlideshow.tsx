@@ -56,7 +56,11 @@ export default function HeroSlideshow({ lang }: { lang: Lang }) {
 
   const scrollTo = useCallback((e: React.MouseEvent, href: string) => {
     e.preventDefault();
-    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+    const el = document.querySelector(href);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+      history.pushState(null, '', href);
+    }
   }, []);
 
   const s = slides[i];

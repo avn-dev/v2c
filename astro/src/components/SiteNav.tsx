@@ -97,7 +97,10 @@ export default function SiteNav({ lang, isLegal = false, altLegalHref, selfPath 
     }
     e.preventDefault();
     const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+      history.pushState(null, '', href);
+    }
     if (mobileOpen) setMobileOpen(false);
   }, [isLegal, mobileOpen]);
 
