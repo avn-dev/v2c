@@ -46,7 +46,7 @@ function ImpressumContent() {
   return (
     <>
       <LegalSection title="Angaben gemäß § 5 DDG">
-        <p style={{ margin: 0 }}>vision2code<br />Inhaber: Abdul Vahap Caliskan<br />Rheinallee 46a<br />53489 Sinzig<br />Deutschland</p>
+        <p style={{ margin: 0 }}>vision2code<br />Inhaber: Abdul Vahap Caliskan</p>
       </LegalSection>
       <LegalSection title="Kontakt">
         <p style={{ margin: 0 }}>
@@ -69,7 +69,7 @@ function ImprintContent() {
   return (
     <>
       <LegalSection title="Information according to § 5 DDG">
-        <p style={{ margin: 0 }}>vision2code<br />Owner: Abdul Vahap Caliskan<br />Rheinallee 46a<br />53489 Sinzig<br />Germany</p>
+        <p style={{ margin: 0 }}>vision2code<br />Owner: Abdul Vahap Caliskan</p>
       </LegalSection>
       <LegalSection title="Contact">
         <p style={{ margin: 0 }}>
@@ -92,7 +92,7 @@ function DatenschutzContent() {
   return (
     <>
       <LegalSection title="Verantwortlicher (Art. 4 Nr. 7 DSGVO)">
-        <p style={{ margin: 0 }}>vision2code<br />Abdul Vahap Caliskan<br />Rheinallee 46a<br />53489 Sinzig<br />Deutschland<br /><a href="mailto:hallo@vision2co.de" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>hallo@vision2co.de</a></p>
+        <p style={{ margin: 0 }}>vision2code<br />Abdul Vahap Caliskan<br /><a href="mailto:hallo@vision2co.de" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>hallo@vision2co.de</a></p>
       </LegalSection>
       <LegalSection title="Hosting, CDN & Server-Logfiles">
         <p style={{ margin: 0 }}>Diese Website (Frontend) wird über Cloudflare ausgeliefert (Cloudflare, Inc., 101 Townsend Street, San Francisco, CA 94107, USA), das zugleich als Content-Delivery-Network und zum Schutz vor Angriffen (u.&nbsp;a. DDoS, Web Application Firewall) dient. Cloudflare verarbeitet hierbei als Auftragsverarbeiter technisch notwendige Zugriffsdaten: IP-Adresse, Datum/Uhrzeit, aufgerufene URL, HTTP-Statuscode, übertragene Datenmenge, Referrer-URL, Browser- und Betriebssystemkennung. Eine Übermittlung in die USA ist möglich; Cloudflare ist unter dem EU-US Data Privacy Framework zertifiziert, zudem bestehen EU-Standardvertragsklauseln. Datenschutzhinweise von Cloudflare: <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>cloudflare.com/privacypolicy</a>.</p>
@@ -120,7 +120,7 @@ function PrivacyContent() {
   return (
     <>
       <LegalSection title="Controller (Art. 4 No. 7 GDPR)">
-        <p style={{ margin: 0 }}>vision2code<br />Abdul Vahap Caliskan<br />Rheinallee 46a<br />53489 Sinzig<br />Germany<br /><a href="mailto:hallo@vision2co.de" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>hallo@vision2co.de</a></p>
+        <p style={{ margin: 0 }}>vision2code<br />Abdul Vahap Caliskan<br /><a href="mailto:hallo@vision2co.de" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>hallo@vision2co.de</a></p>
       </LegalSection>
       <LegalSection title="Hosting, CDN & Server logs">
         <p style={{ margin: 0 }}>This website (frontend) is delivered via Cloudflare (Cloudflare, Inc., 101 Townsend Street, San Francisco, CA 94107, USA), which also serves as a content delivery network and attack protection (incl. DDoS and Web Application Firewall). As a processor, Cloudflare handles technically necessary access data: IP address, date/time, requested URL, HTTP status code, data transferred, referrer URL, browser and OS identifier. Transfer to the USA may occur; Cloudflare is certified under the EU-US Data Privacy Framework, and EU Standard Contractual Clauses are additionally in place. Cloudflare privacy notice: <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>cloudflare.com/privacypolicy</a>.</p>
