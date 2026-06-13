@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { V2CWordmark, TICKER_ITEMS } from './primitives';
 import { Icon } from './icons';
-import { getT } from '../i18n/translations';
+import { getT, anchors } from '../i18n/translations';
 
 type Lang = 'de' | 'en';
 
@@ -57,6 +57,7 @@ export default function SiteNav({ lang, isLegal = false, altLegalHref, selfPath 
   const [langOpen, setLangOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const tr = getT(lang);
+  const a = anchors[lang];
 
   const showFrost = scrolled || isLegal;
   const fg = showFrost ? 'var(--ink)' : '#fff';
@@ -101,10 +102,10 @@ export default function SiteNav({ lang, isLegal = false, altLegalHref, selfPath 
   }, [isLegal, mobileOpen]);
 
   const navLinks = [
-    { label: tr.nav_services, href: '#leistungen' },
-    { label: tr.nav_process,  href: '#prozess' },
-    { label: tr.nav_about,    href: '#ueber' },
-    { label: tr.nav_contact,  href: '#kontakt' },
+    { label: tr.nav_services, href: `#${a.services}` },
+    { label: tr.nav_process,  href: `#${a.process}` },
+    { label: tr.nav_about,    href: `#${a.about}` },
+    { label: tr.nav_contact,  href: `#${a.contact}` },
   ];
 
   const langLabel = lang === 'de' ? tr.lang_de : tr.lang_en;
@@ -176,7 +177,7 @@ export default function SiteNav({ lang, isLegal = false, altLegalHref, selfPath 
               )}
             </div>
 
-            <a href={navHref('#kontakt')} onClick={(e) => scrollToSection(e, '#kontakt')}
+            <a href={navHref(`#${a.contact}`)} onClick={(e) => scrollToSection(e, `#${a.contact}`)}
               className="btn-pill only-desktop" style={{
                 background: showFrost ? 'var(--ink)' : '#fff',
                 color: showFrost ? '#fff' : 'var(--ink)',

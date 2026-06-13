@@ -318,4 +318,11 @@ export function getT(lang: Lang) {
   return t[lang];
 }
 
+// Sprachabhängige Sprungmarken (Section-IDs / URL-Anchors).
+// DE behält die deutschen IDs (bestehende Links bleiben gültig), EN bekommt englische.
+export const anchors = {
+  de: { services: 'leistungen', process: 'prozess', about: 'ueber', contact: 'kontakt' },
+  en: { services: 'services', process: 'process', about: 'about', contact: 'contact' },
+} as const;
+
 export type Translations = typeof t.de;

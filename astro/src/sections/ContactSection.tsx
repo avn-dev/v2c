@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import { Icon } from '../components/icons';
-import { getT } from '../i18n/translations';
+import { getT, anchors } from '../i18n/translations';
 
 type Lang = 'de' | 'en';
 
@@ -35,7 +35,7 @@ export default function ContactSection({ lang }: { lang: Lang }) {
   const tr = useMemo(() => getT(lang), [lang]);
 
   return (
-    <section id="kontakt" style={{ background: 'var(--night)', color: '#fff', paddingBottom: 'clamp(80px,12vh,160px)' }}>
+    <section id={anchors[lang].contact} style={{ background: 'var(--night)', color: '#fff', paddingBottom: 'clamp(80px,12vh,160px)' }}>
       <div style={{ maxWidth: 1080, margin: '0 auto', padding: 'clamp(72px,10vh,140px) var(--shell-pad) 64px' }}>
         <div className="eyebrow" style={{ color: 'rgba(255,255,255,0.55)' }}>{tr.contact_eyebrow}</div>
         <h2 style={{ margin: '16px 0 32px', fontSize: 'clamp(48px,7vw,120px)', fontWeight: 600, letterSpacing: '-0.035em', lineHeight: 0.94, textWrap: 'balance' as const, color: '#fff' }}>

@@ -1,8 +1,9 @@
 ---
-import type { Translations } from '../i18n/translations';
+import type { Translations, Lang } from '../i18n/translations';
+import { anchors } from '../i18n/translations';
 
-interface Props { tr: Translations }
-const { tr } = Astro.props;
+interface Props { tr: Translations; lang: Lang }
+const { tr, lang } = Astro.props;
 
 const steps = [
   { n: '01', t: tr.proc_listen,   b: tr.proc_listen_desc,   d: '30–60 min' },
@@ -12,7 +13,7 @@ const steps = [
 ];
 ---
 
-<section id="prozess" style="background: var(--night); color: #fff; padding-bottom: clamp(80px,12vh,160px)">
+<section id={anchors[lang].process} style="background: var(--night); color: #fff; padding-bottom: clamp(80px,12vh,160px)">
   <div style="max-width: 1080px; margin: 0 auto; padding: clamp(72px,10vh,140px) var(--shell-pad) 48px">
     <div class="eyebrow" style="color: rgba(255,255,255,0.55)">{tr.proc_title}</div>
     <h2 style="margin: 16px 0 0; font-size: clamp(40px,5.5vw,88px); font-weight: 600; letter-spacing: -0.03em; line-height: 0.96; color: #fff; text-wrap: balance">

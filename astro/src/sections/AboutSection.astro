@@ -1,11 +1,12 @@
 ---
-import type { Translations } from '../i18n/translations';
+import type { Translations, Lang } from '../i18n/translations';
+import { anchors } from '../i18n/translations';
 
-interface Props { tr: Translations }
-const { tr } = Astro.props;
+interface Props { tr: Translations; lang: Lang }
+const { tr, lang } = Astro.props;
 ---
 
-<section id="ueber" style="background: var(--paper); padding-bottom: clamp(80px,12vh,160px)">
+<section id={anchors[lang].about} style="background: var(--paper); padding-bottom: clamp(80px,12vh,160px)">
   <div style="max-width: 1080px; margin: 0 auto; padding: clamp(72px,10vh,140px) var(--shell-pad) 48px">
     <div class="eyebrow">{tr.about_eyebrow}</div>
     <h2 style="margin: 16px 0 0; font-size: clamp(40px,5vw,76px); font-weight: 600; letter-spacing: -0.03em; line-height: 0.96; max-width: 800px">

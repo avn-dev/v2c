@@ -98,6 +98,8 @@
 
   html {
     scroll-behavior: smooth;
+    /* Anchor-Ziel nicht unter der fixierten Navbar verstecken */
+    scroll-padding-top: 96px;
   }
 
   body,

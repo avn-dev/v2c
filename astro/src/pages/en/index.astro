@@ -22,9 +22,9 @@ const tr = getT(lang);
   <SiteNav lang={lang} client:load />
   <main>
     <HeroSlideshow lang={lang} client:load />
-    <ServicesSection tr={tr} />
-    <ProcessSection  tr={tr} />
-    <AboutSection    tr={tr} />
+    <ServicesSection tr={tr} lang={lang} />
+    <ProcessSection  tr={tr} lang={lang} />
+    <AboutSection    tr={tr} lang={lang} />
     <ContactSection  lang={lang} client:idle />
   </main>
   <SiteFooter tr={tr} lang={lang} />

@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import { Icon } from '../components/icons';
-import { getT } from '../i18n/translations';
+import { getT, anchors } from '../i18n/translations';
 
 type Lang = 'de' | 'en';
 
@@ -34,6 +34,7 @@ function SlideMedia({ bg, glow1, glow2, active, video }: {
 
 export default function HeroSlideshow({ lang }: { lang: Lang }) {
   const tr = useMemo(() => getT(lang), [lang]);
+  const kontakt = `#${anchors[lang].contact}`;
 
   const slides = useMemo(() => [
     { eyebrow: tr.hero_webapps_eyebrow, head: tr.hero_webapps_head, sub: tr.hero_webapps_sub, primary: tr.hero_webapps_primary, secondary: tr.hero_webapps_secondary, bg: 'linear-gradient(135deg, #1a2030 0%, #0b1018 60%, #1c2538 100%)', glow1: 'rgba(120,150,200,0.45)', glow2: 'rgba(80,110,180,0.40)', video: '/videos/hero-webapps.mp4' },
@@ -76,8 +77,8 @@ export default function HeroSlideshow({ lang }: { lang: Lang }) {
             <div className="eyebrow hero-eyebrow" style={{ color: 'rgba(255,255,255,0.85)', marginBottom: 18 }}>{s.eyebrow}</div>
             <p className="hero-subcopy" style={{ margin: '0 0 28px 0', fontSize: 'clamp(17px,1.4vw,21px)', lineHeight: 1.45, color: 'rgba(255,255,255,0.95)', maxWidth: 560 }}>{s.sub}</p>
             <div className="mobile-stack hero-buttons" style={{ display: 'flex', gap: 12 }}>
-              <a href="#kontakt" onClick={(e) => scrollTo(e, '#kontakt')} className="btn-pill hero-btn" style={{ background: '#fff', color: 'var(--ink)', padding: '20px 36px', fontSize: 17, border: '1.5px solid transparent' }}>{s.primary}</a>
-              <a href="#kontakt" onClick={(e) => scrollTo(e, '#kontakt')} className="btn-pill hero-btn" style={{ background: 'transparent', color: '#fff', border: '1.5px solid rgba(255,255,255,0.55)', padding: '20px 36px', fontSize: 17 }}><Icon.Cal /> {s.secondary}</a>
+              <a href={kontakt} onClick={(e) => scrollTo(e, kontakt)} className="btn-pill hero-btn" style={{ background: '#fff', color: 'var(--ink)', padding: '20px 36px', fontSize: 17, border: '1.5px solid transparent' }}>{s.primary}</a>
+              <a href={kontakt} onClick={(e) => scrollTo(e, kontakt)} className="btn-pill hero-btn" style={{ background: 'transparent', color: '#fff', border: '1.5px solid rgba(255,255,255,0.55)', padding: '20px 36px', fontSize: 17 }}><Icon.Cal /> {s.secondary}</a>
             </div>
           </div>
         </div>
