@@ -13,7 +13,7 @@ const TITLES: Record<Section, Record<'de' | 'en', string>> = {
 };
 
 const EYEBROWS: Record<Section, Record<'de' | 'en', string>> = {
-  impressum:   { de: 'Rechtliche Angaben · § 5 TMG',  en: 'Legal Information · § 5 TMG' },
+  impressum:   { de: 'Rechtliche Angaben · § 5 DDG',  en: 'Legal Information · § 5 DDG' },
   datenschutz: { de: 'Datenverarbeitung · DSGVO',     en: 'Data Processing · GDPR' },
   agb:         { de: 'Vertragsgrundlagen',             en: 'Contractual Basis' },
   widerruf:    { de: 'Verbraucherrechte',              en: 'Consumer Rights' },
@@ -45,13 +45,12 @@ function LegalSection({ title, children }: { title: string; children: React.Reac
 function ImpressumContent() {
   return (
     <>
-      <LegalSection title="Angaben gemäß § 5 TMG">
-        <p style={{ margin: 0 }}>vision2code<br />Inhaber: [folgt]<br />[Straße und Hausnummer]<br />[PLZ Ort]<br />Deutschland</p>
+      <LegalSection title="Angaben gemäß § 5 DDG">
+        <p style={{ margin: 0 }}>vision2code<br />Inhaber: Abdul Vahap Caliskan<br />Rheinallee 46a<br />53489 Sinzig<br />Deutschland</p>
       </LegalSection>
       <LegalSection title="Kontakt">
         <p style={{ margin: 0 }}>
-          E-Mail: <a href="mailto:hallo@vision2co.de" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>hallo@vision2co.de</a><br />
-          Telefon: [folgt]
+          E-Mail: <a href="mailto:hallo@vision2co.de" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>hallo@vision2co.de</a>
         </p>
       </LegalSection>
       <LegalSection title="Steuerliche Angaben">
@@ -71,13 +70,12 @@ function ImpressumContent() {
 function ImprintContent() {
   return (
     <>
-      <LegalSection title="Information according to § 5 TMG">
-        <p style={{ margin: 0 }}>vision2code<br />Owner: [to follow]<br />[Street and house number]<br />[Postal code, city]<br />Germany</p>
+      <LegalSection title="Information according to § 5 DDG">
+        <p style={{ margin: 0 }}>vision2code<br />Owner: Abdul Vahap Caliskan<br />Rheinallee 46a<br />53489 Sinzig<br />Germany</p>
       </LegalSection>
       <LegalSection title="Contact">
         <p style={{ margin: 0 }}>
-          Email: <a href="mailto:hallo@vision2co.de" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>hallo@vision2co.de</a><br />
-          Phone: [to follow]
+          Email: <a href="mailto:hallo@vision2co.de" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>hallo@vision2co.de</a>
         </p>
       </LegalSection>
       <LegalSection title="Tax information">
@@ -98,11 +96,12 @@ function DatenschutzContent() {
   return (
     <>
       <LegalSection title="Verantwortlicher (Art. 4 Nr. 7 DSGVO)">
-        <p style={{ margin: 0 }}>vision2code · [Anschrift folgt]<br /><a href="mailto:hallo@vision2co.de" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>hallo@vision2co.de</a></p>
+        <p style={{ margin: 0 }}>vision2code<br />Abdul Vahap Caliskan<br />Rheinallee 46a<br />53489 Sinzig<br />Deutschland<br /><a href="mailto:hallo@vision2co.de" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>hallo@vision2co.de</a></p>
       </LegalSection>
-      <LegalSection title="Hosting & Server-Logfiles">
-        <p style={{ margin: 0 }}>Die Website wird auf einem eigenen Server (NGINX unter Ubuntu Linux) betrieben. Bei jedem Seitenaufruf erfasst der Webserver automatisch: IP-Adresse, Datum/Uhrzeit, aufgerufene URL, HTTP-Statuscode, übertragene Datenmenge, Referrer-URL, Browser- und Betriebssystemkennung.</p>
-        <p style={{ margin: '12px 0 0' }}>Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO. Speicherdauer: 7 Tage. Keine Weitergabe an Dritte.</p>
+      <LegalSection title="Hosting, CDN & Server-Logfiles">
+        <p style={{ margin: 0 }}>Diese Website (Frontend) wird über Cloudflare ausgeliefert (Cloudflare, Inc., 101 Townsend Street, San Francisco, CA 94107, USA), das zugleich als Content-Delivery-Network und zum Schutz vor Angriffen (u.&nbsp;a. DDoS, Web Application Firewall) dient. Cloudflare verarbeitet hierbei als Auftragsverarbeiter technisch notwendige Zugriffsdaten: IP-Adresse, Datum/Uhrzeit, aufgerufene URL, HTTP-Statuscode, übertragene Datenmenge, Referrer-URL, Browser- und Betriebssystemkennung. Eine Übermittlung in die USA ist möglich; Cloudflare ist unter dem EU-US Data Privacy Framework zertifiziert, zudem bestehen EU-Standardvertragsklauseln. Datenschutzhinweise von Cloudflare: <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>cloudflare.com/privacypolicy</a>.</p>
+        <p style={{ margin: '12px 0 0' }}>Das Backend bzw. die Programmierschnittstelle (API, api.vision2co.de) wird auf einem Server bei OVHcloud (OVH SAS, 2 rue Kellermann, 59100 Roubaix, Frankreich) innerhalb der EU betrieben. Darüber werden ausschließlich die Anfragen aus dem Kontaktformular verarbeitet.</p>
+        <p style={{ margin: '12px 0 0' }}>Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (sicherer und störungsfreier Betrieb der Website). Server-Logfiles werden für maximal 7 Tage gespeichert. Eine Weitergabe an Dritte erfolgt nicht, ausgenommen die vorgenannten Auftragsverarbeiter.</p>
       </LegalSection>
       <LegalSection title="Kontaktformular & E-Mail">
         <p style={{ margin: 0 }}>Übermittelte Daten (Name, E-Mail, Nachricht) werden ausschließlich zur Bearbeitung der Anfrage verarbeitet. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO. Löschung nach Abschluss der Anfrage, sofern keine Aufbewahrungspflicht besteht.</p>
@@ -125,11 +124,12 @@ function PrivacyContent() {
   return (
     <>
       <LegalSection title="Controller (Art. 4 No. 7 GDPR)">
-        <p style={{ margin: 0 }}>vision2code · [address to follow]<br /><a href="mailto:hallo@vision2co.de" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>hallo@vision2co.de</a></p>
+        <p style={{ margin: 0 }}>vision2code<br />Abdul Vahap Caliskan<br />Rheinallee 46a<br />53489 Sinzig<br />Germany<br /><a href="mailto:hallo@vision2co.de" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>hallo@vision2co.de</a></p>
       </LegalSection>
-      <LegalSection title="Hosting & Server logs">
-        <p style={{ margin: 0 }}>The website is operated on a dedicated server (NGINX on Ubuntu Linux). On each page load the web server automatically records: IP address, date/time, requested URL, HTTP status code, data transferred, referrer URL, browser and OS identifier.</p>
-        <p style={{ margin: '12px 0 0' }}>Legal basis: Art. 6(1)(f) GDPR. Retention period: 7 days. No disclosure to third parties.</p>
+      <LegalSection title="Hosting, CDN & Server logs">
+        <p style={{ margin: 0 }}>This website (frontend) is delivered via Cloudflare (Cloudflare, Inc., 101 Townsend Street, San Francisco, CA 94107, USA), which also serves as a content delivery network and attack protection (incl. DDoS and Web Application Firewall). As a processor, Cloudflare handles technically necessary access data: IP address, date/time, requested URL, HTTP status code, data transferred, referrer URL, browser and OS identifier. Transfer to the USA may occur; Cloudflare is certified under the EU-US Data Privacy Framework, and EU Standard Contractual Clauses are additionally in place. Cloudflare privacy notice: <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--ink)', textDecoration: 'underline' }}>cloudflare.com/privacypolicy</a>.</p>
+        <p style={{ margin: '12px 0 0' }}>The backend / API (api.vision2co.de) is operated on a server at OVHcloud (OVH SAS, 2 rue Kellermann, 59100 Roubaix, France) within the EU. It is used solely to process contact form submissions.</p>
+        <p style={{ margin: '12px 0 0' }}>Legal basis: Art. 6(1)(f) GDPR (secure and fault-free operation of the website). Server log files are stored for a maximum of 7 days. No disclosure to third parties, except the processors named above.</p>
       </LegalSection>
       <LegalSection title="Contact form & email">
         <p style={{ margin: 0 }}>Submitted data (name, email, message) are processed solely to handle the inquiry. Legal basis: Art. 6(1)(b) GDPR. Deleted after the inquiry is resolved, unless statutory retention obligations apply.</p>
